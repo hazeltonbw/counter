@@ -19,6 +19,6 @@ const enhancer = composeEnhancers(
 
 const reducers = combineReducers({
     counter: counterReducer,
-    lightTheme: darkModeReducer,
+    colorTheme: darkModeReducer,
 });
 export const store = createStore(reducers, enhancer);

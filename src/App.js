@@ -1,20 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { increment, decrement } from "./slices/CounterSlice";
-import { darkModeToggle } from "./slices/DarkModeSlice";
+import { colorThemeToggle } from "./slices/DarkModeSlice";
 function App() {
     const dispatch = useDispatch();
     const count = useSelector((state) => state.counter.value);
-    const darkMode = useSelector((state) => state.lightTheme.darkMode);
-    const darkModeStyles = darkMode
+    const darkMode = useSelector((state) => state.colorTheme.darkMode);
+    const colorThemeStyles = darkMode
         ? { backgroundColor: "#272727", color: "white" }
         : { backgroundColor: "#fff", color: "black" };
     return (
-        <div style={darkModeStyles} className="App">
+        <div style={colorThemeStyles} className="App">
             <div className="container">
                 <button
                     className="darkMode"
-                    onClick={() => dispatch(darkModeToggle())}
+                    onClick={() => dispatch(colorThemeToggle())}
                 >
                     {darkMode ? "Light Mode" : "Dark Mode"}
                 </button>

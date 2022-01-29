@@ -2,7 +2,7 @@ const initialState = {
     darkMode: true,
 };
 
-export const darkModeToggle = () => {
+export const colorThemeToggle = () => {
     return { type: "darkMode/toggle" };
 };
 
