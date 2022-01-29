@@ -1,6 +1,6 @@
 // store here
-import { counterReducer } from "./Components/CounterSlice";
-import { darkModeReducer } from "./Components/DarkModeSlice";
+import { counterReducer } from "./slices/CounterSlice";
+import { darkModeReducer } from "./slices/DarkModeSlice";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 /* Had to include this to get Redux Devtools to work 
    on Google Chrome
@@ -18,7 +18,7 @@ const enhancer = composeEnhancers(
 );
 
 const reducers = combineReducers({
-    counterReducer: counterReducer,
-    darkModeReducer: darkModeReducer,
+    counter: counterReducer,
+    lightTheme: darkModeReducer,
 });
 export const store = createStore(reducers, enhancer);

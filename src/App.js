@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import { increment, decrement } from "./Components/CounterSlice";
-import { darkModeToggle } from "./Components/DarkModeSlice";
+import { increment, decrement } from "./slices/CounterSlice";
+import { darkModeToggle } from "./slices/DarkModeSlice";
 function App() {
     const dispatch = useDispatch();
-    const count = useSelector((state) => state.counterReducer.value);
-    const darkMode = useSelector((state) => state.darkModeReducer.darkMode);
+    const count = useSelector((state) => state.counter.value);
+    const darkMode = useSelector((state) => state.lightTheme.darkMode);
     const darkModeStyles = darkMode
         ? { backgroundColor: "#272727", color: "white" }
         : { backgroundColor: "#fff", color: "black" };
